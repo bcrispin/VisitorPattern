@@ -51,11 +51,29 @@ public class FindByNameVisitor implements Visitor {
 
     @Override
     public void visit(Room room) {
-        if (room.getDescription().contains(searchString))
+        if (room.getDescription().contains(searchString)) {
+            foundElements.add(room);
+        }
     }
 
     @Override
     public void visit(BuildingSystem buildingSystem) {
+        if (buildingSystem.getName().equals(searchString)) {
+            foundElements.add(buildingSystem);
+        }
+    }
 
+    public void printFoundElements() {
+        for (Element element : foundElements) {
+            if (element instanceof Asset) {
+                System.out.println(((Asset) element).getType());
+            }
+            else if (element instanceof Employee) {
+                System.out.println(((Employee) element).getName());
+            }
+            else if (element instanceof BuildingSystem) {
+                System.out.println(((BuildingSystem) element).getName());
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@ package com.brennan.cs566;
 
 import com.brennan.cs566.models.element.*;
 import com.brennan.cs566.models.element.BuildingSystem;
+import com.brennan.cs566.models.visitor.FindByNameVisitor;
 import com.brennan.cs566.models.visitor.PrintAllVisitor;
 import com.brennan.cs566.models.visitor.ValueCounterVisitor;
 
@@ -11,12 +12,15 @@ public class Main {
         Building office = generateSampleBuilding();
         PrintAllVisitor printAllVisitor = new PrintAllVisitor();
         ValueCounterVisitor valueCounterVisitor = new ValueCounterVisitor();
+        FindByNameVisitor findByNameVisitor = new FindByNameVisitor("Bob");
 
         office.accept(printAllVisitor);
         office.accept(valueCounterVisitor);
+        office.accept(findByNameVisitor);
 
         System.out.println("Total value: " + valueCounterVisitor.getValue());
 
+        findByNameVisitor.printFoundElements();
 
     }
 
@@ -102,6 +106,7 @@ public class Main {
                 .build();
 
         Building theOffice = Building.builder()
+                .name("My office")
                 .floor(f1)
                 .floor(f2)
                 .build();
