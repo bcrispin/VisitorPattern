@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/VistorPattern.iml" filepath="$PROJECT_DIR$/.idea/modules/VistorPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/VistorPattern_main.iml" filepath="$PROJECT_DIR$/.idea/modules/VistorPattern_main.iml" group="VistorPattern" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/VistorPattern_test.iml" filepath="$PROJECT_DIR$/.idea/modules/VistorPattern_test.iml" group="VistorPattern" />
+    </modules>
+  </component>
+</project>
